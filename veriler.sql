@@ -1,11 +1,13 @@
 -- ÖNCE PROBLEMLERİ GİDERİNİZ!!!!
 
+-- POSTGRESQL İLE UYUMLU HALE GETİRDİM !!! yazar ve tür insert işlemi üste alındı.
+--backtick işaeretleri kaldırıldı.
+-- tablo isimleri düzeltildi.
 
--- 
 -- Tablo döküm verisi `islem`
 --
 
-INSERT INTO `islem` (`islemno`, `ogrno`, `kitapno`, `atarih`, `vtarih`) VALUES
+INSERT INTO islem (islem_id, ogrenci_id, kitap_id, atarih, vtarih) VALUES
 (1, 73, 10, '2006-01-01 00:00:00', '2006-01-17 00:00:00'),
 (2, 6, 17, '2006-01-02 00:00:00', '2006-01-07 00:00:00'),
 (3, 59, 11, '2006-01-03 00:00:00', '2006-01-06 00:00:00'),
@@ -860,7 +862,7 @@ INSERT INTO `islem` (`islemno`, `ogrno`, `kitapno`, `atarih`, `vtarih`) VALUES
 (852, 50, 21, '2007-10-13 00:00:00', '2007-10-23 00:00:00');
 
 
-INSERT INTO `islem` (`islemno`, `ogrno`, `kitapno`, `atarih`, `vtarih`) VALUES
+INSERT INTO islem (islem_id, ogrenci_id, kitap_id, atarih, vtarih) VALUES
 (853, 40, 12, '2007-10-13 00:00:00', '2007-10-22 00:00:00'),
 (854, 72, 14, '2007-10-14 00:00:00', '2007-10-28 00:00:00'),
 (855, 95, 38, '2007-10-15 00:00:00', '2007-11-03 00:00:00'),
@@ -1411,65 +1413,116 @@ INSERT INTO `islem` (`islemno`, `ogrno`, `kitapno`, `atarih`, `vtarih`) VALUES
 (1400, 6, 31, '2008-11-28 00:00:00', '2008-12-08 00:00:00');
 
 -- --------------------------------------------------------
+-- Tablo döküm verisi `tur`
+--
 
+INSERT INTO tur (tur_id, ad) VALUES
+(1, 'Dram                          '),
+(2, 'Komedi                        '),
+(3, 'Roman                         '),
+(4, 'Hikaye                        '),
+(5, 'Araştırma                     '),
+(6, 'Fıkra                         '),
+(7, 'Deneme                        ');
+
+-- --------------------------------------------------------
+
+--
+
+
+
+--
+-- Tablo döküm verisi `yazar`
+--
+
+INSERT INTO yazar (yazar_id, ad, soyad) VALUES
+(1, 'Leyla               ', 'Çelik               '),
+(2, 'Zeynep              ', 'Emin                '),
+(3, 'Ali                 ', 'Yazar               '),
+(4, 'Deniz               ', 'Akpınar             '),
+(5, 'Mehmet              ', 'Çelik               '),
+(6, 'Sabri               ', 'Demir               '),
+(7, 'Kemal               ', 'Yılbur              '),
+(8, 'Remzi               ', 'Rüzgar              '),
+(9, 'Pınar               ', 'Karakaş             '),
+(10, 'Remzi               ', 'Rüzgar              '),
+(11, 'Emin                ', 'Karakaş             '),
+(12, 'Leyla               ', 'Sevinç              '),
+(13, 'Fidan               ', 'Akpınar             '),
+(14, 'Fadime              ', 'Balcı               '),
+(15, 'Ceylan              ', 'Çelik               '),
+(16, 'Derya               ', 'Balcı               '),
+(17, 'Pınar               ', 'Sevinç              '),
+(18, 'Kenan               ', 'Kabak               '),
+(19, 'Sabri               ', 'Can                 '),
+(20, 'Emin                ', 'Kara                '),
+(21, 'Eşref               ', 'Kabak               '),
+(22, 'Fidan               ', 'Aktaş               '),
+(23, 'Zeynep              ', 'Bayrak              '),
+(24, 'İsmail              ', 'Yiğit               '),
+(25, 'Niyazi              ', 'Özcan               '),
+(26, 'Derya               ', 'Akçakaya            '),
+(27, 'Mine                ', 'Başkara             '),
+(28, 'Şakir               ', 'Kızıltepe           '),
+(29, 'Filiz               ', 'Yıldız              '),
+(30, 'Kemal               ', 'Karakaya            ');
 --
 -- Tablo döküm verisi `kitap`
 --
 
-INSERT INTO `kitap` (`kitapno`, `isbnno`, `kitapadi`, `yazarno`, `turno`, `sayfasayisi`, `puan`) VALUES
-(1, '253-335-3934-16-4   ', 'Abdülhamidin Kurtlarla Dansı', 26, 3, 368, 22),
-(2, '295-115-3846-25-2   ', 'Ablamı Nereye Kaçırdılar', 6, 1, 220, 27),
-(3, '127-255-2542-27-4   ', 'Anayurttan Anadoluya', 18, 6, 311, 19),
-(4, '292-246-1768-30-4   ', 'Anneannem Gelin Oldu', 22, 4, 135, 15),
-(5, '133-135-1902-34-4   ', 'Antik Acılar', 10, 3, 179, 28),
-(6, '227-381-2011-10-2   ', 'Aşk Ve Öbür Cinler', 25, 1, 242, 18),
-(7, '295-374-1891-21-2   ', 'Aşksız İnsanlar', 22, 3, 346, 18),
-(8, '212-395-2870-16-8   ', 'Atuan Mezarları', 28, 6, 389, 16),
-(9, '266-179-1159-15-2   ', 'Bahar İsyancıdır', 6, 4, 259, 25),
-(10, '141-285-1954-21-5   ', 'Benim Üniversitelerim', 27, 2, 391, 15),
-(11, '393-320-3629-26-4   ', 'Bir Gemide', 19, 6, 89, 16),
-(12, '195-164-1129-21-1   ', 'Bir Ses Böler Geceyi', 6, 4, 265, 14),
-(13, '205-235-3170-13-6   ', 'Boğaziçi Şıngır Mıngır', 20, 6, 160, 14),
-(14, '128-392-2346-31-8   ', 'Borçlu Olduklarımız', 27, 5, 383, 14),
-(15, '233-100-3467-22-3   ', 'Büyücüler', 5, 6, 188, 16),
-(16, '322-328-2571-13-7   ', 'Danışmanlık İncileri', 28, 5, 393, 20),
-(17, '260-357-1043-15-5   ', 'Dol Karabekir Dol', 6, 3, 338, 11),
-(18, '362-284-2000-13-6   ', 'Düşler Düşü', 5, 6, 109, 21),
-(19, '226-379-1465-26-3   ', 'Haset Ve Şükran', 12, 3, 151, 19),
-(20, '307-393-1346-24-1   ', 'İnsanlarımız 3', 27, 3, 134, 11),
-(21, '165-174-2247-28-1   ', 'Kadınlar Okulu', 15, 1, 391, 24),
-(22, '103-286-1279-21-2   ', 'Kapitalist Toplum', 23, 3, 161, 10),
-(23, '209-392-2760-28-7   ', 'Lal Masallar', 11, 5, 313, 26),
-(24, '381-215-2765-22-6   ', 'Makas', 15, 1, 320, 26),
-(25, '148-336-3787-29-4   ', 'Minima Morelia', 9, 4, 183, 22),
-(26, '218-194-3502-20-1   ', 'Raikin Annesi', 23, 6, 93, 13),
-(27, '251-275-2168-11-8   ', 'Rana', 8, 4, 135, 21),
-(28, '140-274-3728-27-3   ', 'Rengahenk', 12, 6, 149, 19),
-(29, '135-309-2577-18-8   ', 'Sarıkamıştan Esarete', 16, 5, 178, 18),
-(30, '398-276-1811-34-5   ', 'Savaş Sanatı', 20, 2, 256, 13),
-(31, '236-132-3581-29-1   ', 'Sessiz Arka Bahçeler', 8, 5, 248, 24),
-(32, '307-340-3979-23-4   ', 'Sıradışı Filozoflar', 26, 2, 314, 16),
-(33, '301-164-2841-35-3   ', 'Telgrafhane', 19, 6, 293, 21),
-(34, '195-195-1004-17-3   ', 'Toprak', 23, 2, 230, 12),
-(35, '281-239-3080-17-5   ', 'Üsküdarda Sabah Oldu', 13, 5, 101, 20),
-(36, '226-265-1500-21-5   ', 'Yedi İklim Dört Bucak', 25, 2, 282, 16),
-(37, '266-280-3443-17-7   ', 'Zararlı Alışkanlıklar', 10, 5, 203, 14),
-(38, '322-236-2524-16-2   ', 'Zengin Kadın', 28, 5, 304, 15),
-(39, '294-226-2889-15-1   ', 'Abluka', 7, 1, 220, 12),
-(40, '224-383-3420-14-8   ', 'Açlık', 20, 3, 294, 27),
-(41, '189-209-3005-20-5   ', 'Adı Aylin', 6, 2, 97, 22),
-(42, '399-158-2002-16-5   ', 'Aklın İsyanı', 24, 4, 297, 14),
-(43, '312-215-2630-27-2   ', 'Araba Sevdası', 11, 2, 168, 18),
-(44, '220-275-2636-35-7   ', 'Araf', 16, 1, 235, 16),
-(45, '280-188-3589-22-8   ', 'Başarı Rehberi', 1, 4, 116, 14);
-
+INSERT INTO kitap (kitap_id, ad, yazar_id, tur_id, sayfasayisi, puan) VALUES
+(1, 'Abdülhamidin Kurtlarla Dansı', 26, 3, 368, 22),
+(2, 'Ablamı Nereye Kaçırdılar', 6, 1, 220, 27),
+(3, 'Anayurttan Anadoluya', 18, 6, 311, 19),
+(4, 'Anneannem Gelin Oldu', 22, 4, 135, 15),
+(5, 'Antik Acılar', 10, 3, 179, 28),
+(6, 'Aşk Ve Öbür Cinler', 25, 1, 242, 18),
+(7, 'Aşksız İnsanlar', 22, 3, 346, 18),
+(8,  'Atuan Mezarları', 28, 6, 389, 16),
+(9,  'Bahar İsyancıdır', 6, 4, 259, 25),
+(10, 'Benim Üniversitelerim', 27, 2, 391, 15),
+(11, 'Bir Gemide', 19, 6, 89, 16),
+(12, 'Bir Ses Böler Geceyi', 6, 4, 265, 14),
+(13, 'Boğaziçi Şıngır Mıngır', 20, 6, 160, 14),
+(14, 'Borçlu Olduklarımız', 27, 5, 383, 14),
+(15, 'Büyücüler', 5, 6, 188, 16),
+(16, 'Danışmanlık İncileri', 28, 5, 393, 20),
+(17, 'Dol Karabekir Dol', 6, 3, 338, 11),
+(18, 'Düşler Düşü', 5, 6, 109, 21),
+(19, 'Haset Ve Şükran', 12, 3, 151, 19),
+(20, 'İnsanlarımız 3', 27, 3, 134, 11),
+(21, 'Kadınlar Okulu', 15, 1, 391, 24),
+(22, 'Kapitalist Toplum', 23, 3, 161, 10),
+(23, 'Lal Masallar', 11, 5, 313, 26),
+(24, 'Makas', 15, 1, 320, 26),
+(25, 'Minima Morelia', 9, 4, 183, 22),
+(26, 'Raikin Annesi', 23, 6, 93, 13),
+(27, 'Rana', 8, 4, 135, 21),
+(28, 'Rengahenk', 12, 6, 149, 19),
+(29, 'Sarıkamıştan Esarete', 16, 5, 178, 18),
+(30, 'Savaş Sanatı', 20, 2, 256, 13),
+(31, 'Sessiz Arka Bahçeler', 8, 5, 248, 24),
+(32, 'Sıradışı Filozoflar', 26, 2, 314, 16),
+(33, 'Telgrafhane', 19, 6, 293, 21),
+(34, 'Toprak', 23, 2, 230, 12),
+(35, 'Üsküdarda Sabah Oldu', 13, 5, 101, 20),
+(36, 'Yedi İklim Dört Bucak', 25, 2, 282, 16),
+(37, 'Zararlı Alışkanlıklar', 10, 5, 203, 14),
+(38, 'Zengin Kadın', 28, 5, 304, 15),
+(39, 'Abluka', 7, 1, 220, 12),
+(40, 'Açlık', 20, 3, 294, 27),
+(41, 'Adı Aylin', 6, 2, 97, 22),
+(42, 'Aklın İsyanı', 24, 4, 297, 14),
+(43, 'Araba Sevdası', 11, 2, 168, 18),
+(44, 'Araf', 16, 1, 235, 16),
+(45, 'Başarı Rehberi', 1, 4, 116, 14);
 -- --------------------------------------------------------
 
 --
 -- Tablo döküm verisi `ogrenci`
 --
 
-INSERT INTO `ogrenci` (`ogrno`, `ograd`, `ogrsoyad`, `cinsiyet`, `dtarih`, `sinif`, `puan`) VALUES
+INSERT INTO ogrenci (ogrenci_id, ad, soyad, cinsiyet, dtarih, sinif, puan) VALUES
 (1, 'Hülya     ', 'Yiğit               ', 'K', '1990-04-08 00:00:00', '10A ', 0),
 (2, 'Niyazi    ', 'Sevinç              ', 'E', '1990-11-11 00:00:00', '9B  ', 0),
 (3, 'İsmail    ', 'Sevinç              ', 'E', '1990-04-17 00:00:00', '10B ', 0),
@@ -1573,55 +1626,3 @@ INSERT INTO `ogrenci` (`ogrno`, `ograd`, `ogrsoyad`, `cinsiyet`, `dtarih`, `sini
 
 -- --------------------------------------------------------
 
-
---
--- Tablo döküm verisi `tur`
---
-
-INSERT INTO `tur` (`turno`, `turadi`) VALUES
-(1, 'Dram                          '),
-(2, 'Komedi                        '),
-(3, 'Roman                         '),
-(4, 'Hikaye                        '),
-(5, 'Araştırma                     '),
-(6, 'Fıkra                         '),
-(7, 'Deneme                        ');
-
--- --------------------------------------------------------
-
-
---
--- Tablo döküm verisi `yazar`
---
-
-INSERT INTO `yazar` (`yazarno`, `yazarad`, `yazarsoyad`) VALUES
-(1, 'Leyla               ', 'Çelik               '),
-(2, 'Zeynep              ', 'Emin                '),
-(3, 'Ali                 ', 'Yazar               '),
-(4, 'Deniz               ', 'Akpınar             '),
-(5, 'Mehmet              ', 'Çelik               '),
-(6, 'Sabri               ', 'Demir               '),
-(7, 'Kemal               ', 'Yılbur              '),
-(8, 'Remzi               ', 'Rüzgar              '),
-(9, 'Pınar               ', 'Karakaş             '),
-(10, 'Remzi               ', 'Rüzgar              '),
-(11, 'Emin                ', 'Karakaş             '),
-(12, 'Leyla               ', 'Sevinç              '),
-(13, 'Fidan               ', 'Akpınar             '),
-(14, 'Fadime              ', 'Balcı               '),
-(15, 'Ceylan              ', 'Çelik               '),
-(16, 'Derya               ', 'Balcı               '),
-(17, 'Pınar               ', 'Sevinç              '),
-(18, 'Kenan               ', 'Kabak               '),
-(19, 'Sabri               ', 'Can                 '),
-(20, 'Emin                ', 'Kara                '),
-(21, 'Eşref               ', 'Kabak               '),
-(22, 'Fidan               ', 'Aktaş               '),
-(23, 'Zeynep              ', 'Bayrak              '),
-(24, 'İsmail              ', 'Yiğit               '),
-(25, 'Niyazi              ', 'Özcan               '),
-(26, 'Derya               ', 'Akçakaya            '),
-(27, 'Mine                ', 'Başkara             '),
-(28, 'Şakir               ', 'Kızıltepe           '),
-(29, 'Filiz               ', 'Yıldız              '),
-(30, 'Kemal               ', 'Karakaya            ');
